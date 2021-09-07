@@ -37,5 +37,9 @@ public class ProblemFourAndFive {
                 + Lab2Integers.intToChar(38)
                 + Lab2Integers.intToChar(43)
                 + Lab2Integers.intToChar(125));
+
+        System.out.println("Should return ZZvVRllFf: " + Lab2Vowels.replaceVowels("AAeEIooUu"));
+        System.out.println("Should return  Hvlll: " + Lab2Vowels.replaceVowels("Hello"));
+        System.out.println("Should return  Zpplv: " + Lab2Vowels.replaceVowels("Apple"));
     }
 }

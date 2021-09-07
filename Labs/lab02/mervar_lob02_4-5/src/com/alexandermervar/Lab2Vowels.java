@@ -2,7 +2,7 @@ package com.alexandermervar;
 
 public class Lab2Vowels {
 
-    public static String replaceVowels(char[] givenCharArray, int stringLength) {
+    public static String replaceVowels(String beforeConvert) {
         // To complete this function:
         // 1. Process the given String to find the vowels within the String
         // 2. Convert the vowels to the correct ASCII integer values
@@ -10,32 +10,37 @@ public class Lab2Vowels {
         // 4. Return the given String with the switched vowel values
         // 'a' = 97 'z' = 122 'A' = 65 'Z' = 90
         // 'e' = 101 'v' = 118 'E' = 69 'V' = 86
-        int count = stringLength;
-        char[] returnCharArray = givenCharArray;
-        if (returnCharArray[count] == 'a' || returnCharArray[count] == 'e'
-                || returnCharArray[count] == 'i' || returnCharArray[count] == 'o'
-                || returnCharArray[count] == 'u' || returnCharArray[count] == 'A'
-                || returnCharArray[count] == 'E' || returnCharArray[count] == 'I'
-                || returnCharArray[count] == 'O' || returnCharArray[count] == 'U') {
-            //Conversion Code & Recursive Statement
+        if (beforeConvert.charAt(0) == 'a'
+                || beforeConvert.charAt(0) == 'e'
+                || beforeConvert.charAt(0) == 'i'
+                || beforeConvert.charAt(0) == 'o'
+                || beforeConvert.charAt(0) == 'u'
+                || beforeConvert.charAt(0) == 'A'
+                || beforeConvert.charAt(0) == 'E'
+                || beforeConvert.charAt(0) == 'I'
+                || beforeConvert.charAt(0) == 'O'
+                || beforeConvert.charAt(0) == 'U') {
+            if ((int) beforeConvert.charAt(0) <= 90) {
+                int oldChar = (int) beforeConvert.charAt(0);
+                int distance = oldChar - 65;
+                if (beforeConvert.length() == 1){
+                    return String.valueOf((char) (90 - distance));
+                }
+                else {
+                    return String.valueOf((char) (90 - distance)) + replaceVowels(beforeConvert.substring(1));
+                }
+            }
+            else if ((int) beforeConvert.charAt(0) <= 122) {
+                int oldChar = (int) beforeConvert.charAt(0);
+                int distance = oldChar - 97;
+                if (beforeConvert.length() == 1) {
+                    return String.valueOf((char) (122 - distance));
+                }
+                else {
+                    return String.valueOf((char) (122 - distance)) + replaceVowels(beforeConvert.substring(1));
+                }
+            }
         }
-        else {
-            //Recursive Statement
-
-        }
-
-        /*
-        if (returnString.contains("a") || returnString.contains("e") || returnString.contains("i")
-                || returnString.contains("o") || returnString.contains("u")
-            || returnString.contains("A") || returnString.contains("E") ||
-                returnString.contains("I") || returnString.contains("O")
-                || returnString.contains("U")) {
-
-        }
-        else {
-            return returnString;
-        }
-
-         */
+            return beforeConvert.substring(0,1) + replaceVowels(beforeConvert.substring(1));
     }
 }
