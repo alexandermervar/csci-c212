@@ -47,7 +47,7 @@ public class Lab2Exercises {
         return consonantCount;
     }
 
-    /*
+
     // Use a Scanner to reads a number between 1000 and 1 Trillion and print it with commas (,) separating
     // every three digits. for example: 12317910.67 will be printed as $12,317,910.67
     // You MUST use divide and/or modulus operators and may save part of the number, then concatenate back
@@ -56,12 +56,14 @@ public class Lab2Exercises {
     // Question: There is an easier way to print a number with commas (,) separating every 3 digits without
     // doing all the computations with %. What is it? Answer: Use printf .... How? write the code that will do it.
     public static String addCommas(double usrNumber) {
+        // Told to return empty String if I am using printf
+        return "";
 
 
         // DecimalFormat formating = new DecimalFormat("#,###.00");
         // return formating.format(usrNumber);
     }
-    */
+
 
     //NOTE: Completed the exercise within the main class using printf
 
@@ -71,12 +73,19 @@ public class Lab2Exercises {
       // Use Scanner to read inputs from user. Don't use Scanner inside above functions!
         // Exercise 1
         System.out.println("Should return 20: " + areaOfATrapezoid(4.0, 6.0, 4.0));
+        System.out.println("Should be 50: " + areaOfATrapezoid(4.0, 6.0, 10.0));
+        System.out.println("Should be 0: " + areaOfATrapezoid(5.0, 5.0, 0.0));
 
         // Exercise 2
         System.out.println("Should be 15: " + perimeterOfATrapezoid( 5.0, 4.0, 1.0, 5.0));
+        System.out.println("Should be 100: " + perimeterOfATrapezoid(10.0, 50.0, 30.0, 10.0));
+        System.out.println("Should be 50: " + perimeterOfATrapezoid(15.0, 5.0, 15.0, 15.0));
 
         // Exercise 3
         System.out.println("Should return 3: " + countNotVowels("Hello"));
+        System.out.println("Should return 5: " + countNotVowels("Popsicle"));
+        System.out.println("Should return 5: " + countNotVowels("Chocolate"));
+        System.out.println("Should return 3: " + countNotVowels("Potato"));
 
         // Exercise 4
         Scanner input = new Scanner(System.in);
