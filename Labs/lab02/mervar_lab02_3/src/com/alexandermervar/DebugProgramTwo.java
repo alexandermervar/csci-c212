@@ -2,8 +2,8 @@
 //
 //  Released:  1/27/2021
 //
-//  @Author  Your Name and username
-//  Last Edited: 1/27/2021
+//  @Author  Alexander Mervar amervar
+//  Last Edited: 9.6.2021
 //
 //
 //  Directions: The given file is not according to java coding guidelines
@@ -45,14 +45,17 @@ Enter second operand
 6
 The result of the operation is:0.8333333
 */
+package com.alexandermervar;
+
 import java.util.Scanner;
 
 public class DebugProgramTwo
 {
-    public main(String[] args)
+    // Added "static void" to main class
+    public static void main(String[] args)
     {
         float result=0;
-        operationTwo obj = new operationTwo();
+        OperationsTwo obj = new OperationsTwo();
 //        Initializing Scanner object
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Multiplication/Division Calculator:");
@@ -61,30 +64,36 @@ public class DebugProgramTwo
         System.out.println("Enter 3 for performing Multiplication");
         System.out.println("Enter 4 for performing Division");
 //        Taking an int input using Scanner object
-        int _choice = sc.nextInt();
+        int choice = sc.nextInt();
         System.out.println("Enter first operand");
-        int 1operand = sc.nextInt;
+        // Changed variable name for firstOperand and secondOperand to fit Java conventions
+        // Added parentheses for the function nexInt()
+        int firstOperand = sc.nextInt();
         System.out.println("Enter second operand");
-        int second_0perand = sc.nextInt();
+        int secondOperand = sc.nextInt();
         if(choice == 3.0)
         {
-            result=obj.divide(first_operand,second_operand);
+            // Switched the multiply and divide function calls to correct selection
+            result=obj.multiply(firstOperand,secondOperand);
         }
         else if(choice == 4)
         {
-            result=obj.multiply(first_operand,second_operand);
+            result=obj.divide(firstOperand,secondOperand);
         }
         System.out.println("The result of the operation is:"+result);
     }
 }
-class operationTwo
+// Changed class name to fit Java conventions
+class OperationsTwo
 {
 //    function to multiply 2 integers
-    public static float multiply(int first_operand,int second_operand){
-        return first_operand*second_operand;
+    public static float multiply(int firstOperand,int secondOperand){
+        // Cast each operand as a float
+        return (float) firstOperand * (float)secondOperand;
     }
 //    function to divide 2 integers
-    public static float divide(int first_operand,int second_operand){ return first_operand/second_operand;
+    // Cast each operand as a float
+    public static float divide(int firstOperand,int secondOperand){ return (float) firstOperand / (float) secondOperand;
     }
 
 }

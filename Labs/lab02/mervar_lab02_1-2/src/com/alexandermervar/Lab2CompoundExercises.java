@@ -2,12 +2,14 @@
 //  C212
 //  Released:  1/20/21
 //  Lab 2
-//  @Author  Your Name and username
-//  Last Edited:
+//  @Author  Alexander Mervar amervar
+//  Last Edited: 9.6.2021
 //
 //  Directions: See Below
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+package com.alexandermervar;
 
 class Lab2CompoundExercises {
 
@@ -19,16 +21,16 @@ class Lab2CompoundExercises {
           int result = -5; // result is -5
           System.out.println(result);
 
-          --result; // result is now -6
+          result--; // result is now -6
           System.out.println(result);
 
-          result = result / -2; // result is now 3
+          result /= -2; // result is now 3
           System.out.println(result);
 
-          result = result * -1; // result is now -3
+          result *= -1; // result is now -3
           System.out.println(result);
 
-          result = result % 3; // result is now 0
+          result %= 3; // result is now 0
           System.out.println(result);
 
           result++; // result is now 1
@@ -45,5 +47,10 @@ class Lab2CompoundExercises {
         System.out.println(--i);  // "10"
         System.out.println(i--);  // "10"
         System.out.println(++i);  // "10"
+
+         // When working with ++ and -- their placement before or after a variable determines if, when interacting with that variable, the value accessed is
+         // before or after the incrementation. If the ++/-- is after the variable, the return would be the value of the variable before incrementing.
+         // If the ++/-- is before the variable the value accessed would be the value after the incrementation.
+         // Therefore, the incrementation is invisible when calling this function because of when the value is accessed before/after the incrementation.
      }
 }

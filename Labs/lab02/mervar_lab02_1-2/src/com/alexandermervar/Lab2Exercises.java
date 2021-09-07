@@ -85,6 +85,9 @@ public class Lab2Exercises {
         double userDouble = Double.parseDouble(userInput);
         // Was told input "$" as well as leave the decimal values that I have provided unchanged
         System.out.printf(Locale.US, "%,f %n", userDouble);
+
+        // Lab2CompoundExercises
+        Lab2CompoundExercises.differentOperators();
     }
 }
 

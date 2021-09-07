@@ -2,8 +2,8 @@
 //
 //  Released:  1/27/2021
 //
-//  @Author  Your Name and username
-//  Last Edited: 1/27/2021
+//  @Author  Alexander Mervar amervar
+//  Last Edited: 9.6.2021
 //
 //
 //  Directions: The given file is not according to java coding guidelines
@@ -46,13 +46,16 @@ Enter second operand
 The result of the operation is:
 9
 */
+package com.alexandermervar;
+
 import java.util.Scanner;
 
 public class DebugProgramOne
 {
     public static void main(String[] args)
     {
-        operationsEVEn obj = new operationOne();
+        //Fixed below object creation
+        OperationsOne obj = new OperationsOne();
 //      Initializing Scanner object
         Scanner sc = new Scanner(System.in);
         int result = 0;
@@ -63,29 +66,36 @@ public class DebugProgramOne
         System.out.println("Enter 2 for performing Subtraction");
         int choice = sc.nextInt();
         System.out.println("Enter first operand");
-        int First_operand = sc.nextInt();
+        // Fixed variable name to fit Java conventions
+        int firstOperand = sc.nextInt();
         System.out.println("Enter second operand");
 //        Taking an int input using Scanner object
-        int 2nd_operand = sc.nextInt();
+        // Fixed variable name to fit Java conventions
+        int secondOperand = sc.nextInt();
         if(choice==1)
         {
-            result = obj.add(first_operand,second_operand);
+            // Fixed argument names
+            result = obj.add(firstOperand,secondOperand);
         }
         else if(choice==2)
         {
-            result = obj.subtract(first_operand,second_operand);
+            // Fixed argument names
+            result = obj.subtract(firstOperand,secondOperand);
         }
-        System.out.println("The result of the operation is:"+result);
+        // Added space for clarity
+        System.out.println("The result of the operation is: "+result);
     }
 }
-class operationOne
+
+// Fixed class name to fit Java conventions
+class OperationsOne
 {
 //    function to add 2 integers
-    public static int add(int first_operand,int second_operand){
-        return first_operand+second_operand;
+    public static int add(int firstOperand,int secondOperand){
+        return firstOperand+secondOperand;
     }
 //    function to subtract 2 integers
-    public static int subtract(int first_operand,int second_operand){
-        return first_operand-second_operand;
+    public static int subtract(int firstOperand,int secondOperand){
+        return firstOperand-secondOperand;
     }
 }
