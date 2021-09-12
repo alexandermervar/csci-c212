@@ -2,12 +2,12 @@ package com.alexandermervar;
 
 public class Lab3Exercises {
 
-    // Helper function to determine if something is a vowel
+    // Helper function to determine if a given char is a vowel
     public static boolean isVowel(char c) {
         return "AEIOUaeiou".indexOf(c) != -1;
     }
 
-    // Example:
+    // Examples:
     // "horse" -> "orse-hay"
     // "Rhythm" -> "ythm-Rhay"
     // "You must love using Java" -> "ou-Yay ust-may ove-lay using-way ava-Jay"
@@ -48,6 +48,12 @@ public class Lab3Exercises {
             returnString = returnString.substring(0, returnString.length()-1);
         }
         return returnString;
+    }
+
+    // Examples:
+    //
+    public static String pigLatinDecoder (String pigInput) {
+
     }
 
 
