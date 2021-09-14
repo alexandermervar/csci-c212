@@ -38,11 +38,13 @@ import java.util.Scanner;
 
 class DebugProgramThree {
 
-    public static void main(String p[]) throws IOException {
+    // Fixed (String p[]) to (String[] args)
+    public static void main(String[] args) throws IOException {
         // Added Scanner because it is called above
         Scanner sc = new Scanner(System.in);
         System.out.println("Input String to work with: ");
-        String str = sc.nextLine();
+        String strUser = sc.nextLine();
+        String str = "This is a debugging exercise";
         // Added () for the end of the String courtesy function length()
         int len = str.length();
 

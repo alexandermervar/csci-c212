@@ -61,7 +61,8 @@ class DebugProgramOne {
         System.out.println("Area of square with  side " + a + " is : " + a * a);
     }
 
-    public static void main(String p[]) throws IOException {
+    // Fixed (String p[]) to (String[] args)
+    public static void main(String[] args) throws IOException {
         // Removed the call to create a new Rectangle() object because it is unnecessary
         // DebugProgramOne d = new Rectangle();
 

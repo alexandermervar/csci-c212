@@ -74,8 +74,8 @@ class DebugProgramTwo
         System.out.println( "Area of circle with  radius " + a + " is : " + 3.14 * (a*a));
     }
   // Added "static" and added whitespace (tabs) to all lines of code below
-    public static void main(String p[]) throws IOException
-    {
+  // Fixed (String p[]) to (String[] args)
+    public static void main(String[] args) throws IOException {
         // Removed object creation - Unnecessary
         // DebugProgramTwo d = new DebugProgramTwo();
         Scanner keyboard = new Scanner(System.in);
