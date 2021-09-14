@@ -114,7 +114,13 @@ public class Lab3Exercises {
        return returnString;
    }
 
+    public static String randomCarsGenerator (int numCars) {
+        String[] colors = {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"};
+        String[] normalCars = {"Sedan", "SUV", "Truck", "Sports Car", "Jeep", "Motorcycle"};
+        String[] specialCars = {"Police Car", "News Van", "School Bus"};
 
+
+    }
 
 
 
