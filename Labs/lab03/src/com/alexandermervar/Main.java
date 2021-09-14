@@ -23,5 +23,15 @@ public class Main {
         System.out.println("The translated String is: " + "\""
                 + Lab3Exercises.pigLatinDecoder(userPigInput) + "\"");
 
+        //Space in Terminal
+        System.out.println();
+
+        // randomCarsGenerator
+        System.out.println("3 Random Cars: " + Lab3Exercises.randomCarsGenerator(3));
+        System.out.println();
+        System.out.println("5 Random Cars: " + Lab3Exercises.randomCarsGenerator(5));
+        System.out.println();
+        System.out.println("10 Random Cars: " + Lab3Exercises.randomCarsGenerator(10));
+
     }
 }

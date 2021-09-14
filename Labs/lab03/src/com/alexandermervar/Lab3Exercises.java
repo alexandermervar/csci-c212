@@ -119,7 +119,26 @@ public class Lab3Exercises {
         String[] normalCars = {"Sedan", "SUV", "Truck", "Sports Car", "Jeep", "Motorcycle"};
         String[] specialCars = {"Police Car", "News Van", "School Bus"};
 
+        String returnString = "";
 
+        for (int i = 0; i < numCars; i++) {
+            int type = (int) (Math.random() * 5);
+            if (type == 1) {
+                int specialIndex = (int) (Math.random() * specialCars.length - 1);
+                returnString += specialCars[specialIndex] + ", ";
+            }
+            else {
+                int colorIndex = (int) (Math.random() * colors.length - 1);
+                int normalIndex = (int) (Math.random() * normalCars.length - 1);
+                returnString += colors[colorIndex] + " " + normalCars[normalIndex] + ", ";
+            }
+        }
+
+        if (returnString.charAt(returnString.length()-2) == ',') {
+            returnString = returnString.substring(0, returnString.length()-2);
+        }
+
+        return returnString;
     }
 
 
