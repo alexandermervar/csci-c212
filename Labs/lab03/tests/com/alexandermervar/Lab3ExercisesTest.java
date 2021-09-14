@@ -18,5 +18,12 @@ public class Lab3ExercisesTest {
 
     @Test
     public void pigLatinDecoder() {
+        assertEquals(Lab3Exercises.pigLatinDecoder("orse-hay"), "horse");
+        assertEquals(Lab3Exercises.pigLatinDecoder("ythm-Rhay"), "Rhythm");
+        assertEquals(Lab3Exercises.pigLatinDecoder("ou-Yay ust-may ove-lay using-way ava-Jay"), "You must love (wusing/using) Java");
+        assertEquals(Lab3Exercises.pigLatinDecoder("Apple-way"), "(wApple/Apple)");
+        assertEquals(Lab3Exercises.pigLatinDecoder("oung-Yay"), "Young");
+        assertEquals(Lab3Exercises.pigLatinDecoder("urphy-May"), "Murphy");
+        assertEquals(Lab3Exercises.pigLatinDecoder("e-Way are-way inners-way"), "We (ware/are) (winners/inners)");
     }
 }

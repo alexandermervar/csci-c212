@@ -51,9 +51,67 @@ public class Lab3Exercises {
     }
 
     // Examples:
-    //
+    // "orse-hay" -> "horse"
+    // "ythm-Rhay" -> "Rhythm"
+    // "ou-Yay ust-may ove-lay using-way ava-Jay" -> "You must love (wusing/using) Java"
    public static String pigLatinDecoder (String pigInput) {
+        String[] pigSplit = pigInput.split(" ");
+        for (int i = 0; i < pigSplit.length; i++) {
+            // Pull each word out from the array
+            // Manipulate with fitting criteria
+            // Replace value in array
+            String pig = pigSplit[i];
 
+            //Word Manipulation
+            //check for "-Way" ending
+            if (pig.charAt(pig.length()-3) == 'W') {
+                // Fix to English
+                String backToFront = "";
+                String frontToBack = "";
+                backToFront = pig.substring(pig.length() - 3, pig.length() - 2);
+                frontToBack = pig.substring(0, pig.length() - 4);
+                pigSplit[i] = backToFront + frontToBack;
+            }
+            else if (pig.charAt(pig.length()-3) == 'w') {
+                // Fix to English
+                String backToFront = "";
+                String frontToBack = "";
+                String wordOptionOne = "";
+                String wordOptionTwo = "";
+
+                // Break up pieces (inclusive of 'w')
+                backToFront = pig.substring(pig.length() - 3, pig.length() - 2);
+                frontToBack = pig.substring(0, pig.length() - 4);
+                wordOptionOne = backToFront + frontToBack;
+                wordOptionTwo = frontToBack;
+
+                // Replace pigSplit[i]
+                pigSplit[i] = "(" + wordOptionOne + "/" + wordOptionTwo + ")";
+
+            }
+            else {
+                // Fix to English
+                String backToFront = "";
+                String frontToBack = "";
+                int dividingDash = pig.lastIndexOf("-");
+                frontToBack = pig.substring(0, dividingDash);
+                backToFront = pig.substring(dividingDash+1, pig.length()-2);
+
+                pigSplit[i] = backToFront + frontToBack;
+            }
+        }
+
+       // Concatenate all element in the array and return them
+       String returnString = "";
+
+       for (int i = 0; i < pigSplit.length; i++) {
+           returnString += pigSplit[i] + " ";
+       }
+
+       if (returnString.charAt(returnString.length()-1) == ' ') {
+           returnString = returnString.substring(0, returnString.length()-1);
+       }
+       return returnString;
    }
 
 
