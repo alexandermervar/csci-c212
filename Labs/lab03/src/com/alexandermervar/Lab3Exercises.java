@@ -52,9 +52,9 @@ public class Lab3Exercises {
 
     // Examples:
     //
-    public static String pigLatinDecoder (String pigInput) {
+   public static String pigLatinDecoder (String pigInput) {
 
-    }
+   }
 
 
 
