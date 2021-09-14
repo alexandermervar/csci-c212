@@ -52,43 +52,64 @@ import java.util.Scanner;
 class DebugProgramTwo
 {
     // Added "private static void ..." to the function to make it only reachable by code within the class
-    private static void findarea(int a, int b)
+    // Corrected method name to camel case
+    private static void findArea(int a, int b)
     {
         // There was weird and inconsistent spacing (and lack thereof) in this function, so I fixed that
         double area = (a*b) / 2;
-        System.out.println( "\n Area of triangle with length of sides "+ a + " and " + b + " is : "+ area);
+        // Cast area to into to match example above
+        // Removed \n to match example above
+        System.out.println( "Area of triangle with length of sides "+ a + " and " + b + " is : " + (int) area);
     }
 
     // Added "private static ..." to the function to make it only reachable by code within the class
-    private static void findarea(int a)
+    // Corrected method name to camel case
+    private static void findArea(int a)
     {
         // Fixed math to be the correct area of a circle formula, which is pi * r^2
         // I added a closing )
         // Not sure if it's desired to leave pi as the 3.14 value or use the Math constant but, at the moment, I will leave it as is
-        System.out.println( "\n Area of circle with  radius " + a + " is :" + 3.14 * (a*a));
+        // Removed \n to match example above
+        // Added space after ":"
+        System.out.println( "Area of circle with  radius " + a + " is : " + 3.14 * (a*a));
     }
   // Added "static" and added whitespace (tabs) to all lines of code below
     public static void main(String p[]) throws IOException
     {
-        DebugProgramTwo d = new DebugProgramTwo();
+        // Removed object creation - Unnecessary
+        // DebugProgramTwo d = new DebugProgramTwo();
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("\n Find area of \n 1 . Triangle \n 2 . Circle \n\nSelect a choice : ");
+        // Removed extra \n
+        System.out.print("\n Find area of \n 1 . Triangle \n 2 . Circle \nSelect a choice : ");
         int choice = keyboard.nextInt();
 
-        if(choice == "Triangle") {
-            System.out.print("\n Enter the length of base : ");
-            intx =keyboard.nextInt();
-            System.out.print("\n Enter the length of height : ");
-            y=keyboard.next();
-            staatic DebugProgramTwo.findarea(x,y);
+        // Changed the decision to look at instead the correct ints rather than the Strings they represent
+        if(choice == 1) {
+            // Removed \n to match example above
+            // Added \n to match example above
+            System.out.print("Enter the length of base : \n");
+            // Properly initialized int x
+            int x = keyboard.nextInt();
+            // Removed \n to match example above
+            // Added \n to match example above
+            System.out.print("Enter the length of height : \n");
+            // Properly initialized the int y
+            // Added correct Scanner function
+            int y = keyboard.nextInt();
+            // Fixed call to findArea method
+            findArea(x,y);
         
         }
-        else (choice == "Circle") {
-            System.out.print("\n Enter the radius : ");
-            int r =keyboard.nextInt();
-            d.findarea(r);
+        // changed to "else if" statement
+        else if (choice == 2) {
+            // Removed \n to match example above
+            // Added \n to match example above
+            System.out.print("Enter the radius : \n");
+            int r = keyboard.nextInt();
+            // Changed the call for the function to be correct and not use an object (that no longer exists)
+            findArea(r);
         }
-        else static {
+        else {
             System.out.println("Invalid choice");
         }
   

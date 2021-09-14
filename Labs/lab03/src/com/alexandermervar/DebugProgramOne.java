@@ -46,13 +46,15 @@ import java.util.Scanner;
 
 class DebugProgramOne {
     // Added "private static ..." to the function to make it only reachable by code within the class
-    private static void findarea(int a, int b) {
+    // Corrected method name to camel case
+    private static void findArea(int a, int b) {
         // Removed \n to match example above
         System.out.println("Area of rectangle with breadth " + a + " and length " + b + " is : " + a * b);
     }
 
     // Added "private static ..." to the function to make it only reachable by code within the class
-    private static void findarea(int a) {
+    // Corrected method name to camel case
+    private static void findArea(int a) {
         // Fixed math so that the correct output is given
         // Removed \n to match example above
         // Added space after : to match example above
@@ -74,7 +76,7 @@ class DebugProgramOne {
             System.out.print("Enter the side : \n");
             int s = keyboard.nextInt();
             // object does not exist anymore and also doesn't need to be used to call the function
-            findarea(s);
+            findArea(s);
         }
 
         else if(choice == 2) {
@@ -87,7 +89,7 @@ class DebugProgramOne {
             System.out.print("Enter the length : \n");
             // Changed type of length (b) to be an Int as specified in the arguments field of the defined function
             int b = keyboard.nextInt();
-            findarea(a, b);
+            findArea(a, b);
         }
 
         else{
