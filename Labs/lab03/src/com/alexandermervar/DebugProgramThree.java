@@ -2,8 +2,8 @@
 //
 //  Released:  9/8/2021
 //
-//  @Author  Your Name and username
-//  Last Edited: 1/27/2021
+//  @Author  Alexander Mervar amervar
+//  Last Edited: 9.14.2021
 //
 //
 //  Directions: The given file is not according to java coding guidelines
@@ -31,27 +31,40 @@ Eg:
 
 */
 
+package com.alexandermervar;
+
 import java.io.*;
 import java.util.Scanner;
+
 class DebugProgramThree {
 
     public static void main(String p[]) throws IOException {
-        String str = "This is a debugging exercise";
-        int len = str.length;
+        // Added Scanner because it is called above
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input String to work with: ");
+        String str = sc.nextLine();
+        // Added () for the end of the String courtesy function length()
+        int len = str.length();
 
-        char ch1 = str.charAt(str.len);
-        System.out.println("The last character of the string is " + ch1);
+        // Corrected call to the length function as well as fixed the index that is being called
+        // Changed variable name to be more descriptive
+        char lastChar = str.charAt(str.length() - 1);
+        System.out.println("The last character of the string is " + lastChar);
 
         String str1 = "Hello";
         String str2 = " World";
 
-        System.out.println(static String.concat(str1, str2));
+        // Removed static
+        // Fixed call to the concat function and used proper variables
+        System.out.println(str1.concat(str2));
 
+        // Nothing is wrong here but I don't know if this is the intended output due to a lack of example above
         System.out.println(str.replace('i', 'K'));
 
         System.out.println("Substring starting from index 15:");
         System.out.println(str.substring(15));
         System.out.println("Substring starting from index 15 and ending at 20:");
-        System.out.println(str.substring(15, 30));
+        // Added proper end to the substring
+        System.out.println(str.substring(15, 20));
     }
 }
