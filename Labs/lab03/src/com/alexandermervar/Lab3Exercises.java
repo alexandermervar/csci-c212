@@ -141,6 +141,10 @@ public class Lab3Exercises {
         return returnString;
     }
 
-
+    public static String hexToIntNBin (String hexInput) {
+        int decimalConvert = Integer.parseInt(hexInput, 16);
+        String binaryConvert = Integer.toBinaryString(decimalConvert);
+        return "Your number is " + decimalConvert + " (in decimal) and " + binaryConvert + " (in binary)";
+    }
 
 }

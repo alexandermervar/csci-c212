@@ -33,5 +33,19 @@ public class Main {
         System.out.println();
         System.out.println("10 Random Cars: " + Lab3Exercises.randomCarsGenerator(10));
 
+        //Space in Terminal
+        System.out.println();
+
+        // hexToIntNBin
+        System.out.println("Hex Value 64: " + "\n" +
+                Lab3Exercises.hexToIntNBin("64"));
+        System.out.println("Hex Value 7DB7B: " + "\n" +
+                Lab3Exercises.hexToIntNBin("7DB7B"));
+        System.out.println("Hex Value 9DF73: " + "\n" +
+                Lab3Exercises.hexToIntNBin("9DF73"));
+        System.out.println("Hex Value 63: " + "\n" +
+                Lab3Exercises.hexToIntNBin("63"));
+
+
     }
 }
