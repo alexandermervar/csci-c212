@@ -1,9 +1,14 @@
 package com.alexandermervar;
 
+import java.util.Scanner;
+
 public class Lab04Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        // Exercise 1
+        // Call function secretNumber()
+        Lab2Exercises.secretNumber();
 
     }
 }
