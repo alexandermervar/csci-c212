@@ -39,7 +39,7 @@ public class Lab2Exercises {
         if(exponent == 0) {
             return 1;
         }
-        else if (exponent < 0) {
+        else if(exponent < 0) {
             // ERROR
             throw new IllegalArgumentException("Error: exponent can't be a negative number");
         }
@@ -49,5 +49,51 @@ public class Lab2Exercises {
             }
         }
         return returnNum;
+    }
+
+    public static void patternMenu() throws IllegalArgumentException {
+        Scanner sc = new Scanner(System.in);
+
+        boolean run = true;
+
+        while(run?) {
+            System.out.println("Please select the pattern that you wish to create:");
+            System.out.println("A. Arrow Pointing Left");
+            System.out.println("B. Right Angle Triangle (Pointing Down and to the Left)");
+            System.out.println("C. Hollow Square");
+            System.out.println("D. Surprise Shape!");
+            System.out.println("E. Exit");
+
+            String user = sc.nextLine();
+            Random ran = new Random();
+
+            //TODO: Define size
+            int size = ran.nextInt()
+
+            // ERROR
+            if(user != "A" || user != "B" || user != "C" || user != "D" || user != "E") {
+                throw new IllegalArgumentException("Error: Invalid Menu Selection");
+            }
+
+            if(user == "A") {
+
+            }
+
+            else if(user == "B") {
+
+            }
+
+            else if(user == "C") {
+
+            }
+
+            else if(user == "D") {
+
+            }
+
+            else if(user == "E") {
+                run = false;
+            }
+        }
     }
 }

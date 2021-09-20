@@ -18,6 +18,9 @@ public class Lab04Main {
         System.out.println("Should be 125: " + Lab2Exercises.exponentCalculator(5,3));
         System.out.println("Should be an Error: " + Lab2Exercises.exponentCalculator(5,-3));
 
+        // Exercise 3
+        // Call function patternMenu()
+        Lab2Exercises.patternMenu();
 
     }
 }
