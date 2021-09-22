@@ -3,7 +3,7 @@ package com.alexandermervar;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lab2Exercises {
+public class Lab4Exercises {
 
     // Exercise 1 - secretNumber()
     public static void secretNumber() {
@@ -51,6 +51,8 @@ public class Lab2Exercises {
         return returnNum;
     }
 
+
+    // Exercise 3 - patternMenu()
     public static void patternMenu() throws IllegalArgumentException {
         Scanner sc = new Scanner(System.in);
 
@@ -229,5 +231,20 @@ public class Lab2Exercises {
                 run = false;
             }
         }
+    }
+
+    // Exercise 4 - printMyBox(int w, int h)
+    public static String printMyBox(int w, int h) {
+        String returnString = "";
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                returnString = returnString + "#";
+            }
+            if (i != h -1) {
+                returnString = returnString + "\n";
+            }
+        }
+
+        return returnString;
     }
 }
