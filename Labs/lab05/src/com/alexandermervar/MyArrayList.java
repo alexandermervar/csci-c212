@@ -13,13 +13,12 @@ public class MyArrayList {
     }
 
     public void add(int n) {
+        size++;
         if(size > 16) {
-            size++;
             data = Arrays.copyOf(data, data.length+1);
             data[size-1] = n;
         }
         else {
-            size++;
             data[size-1] = n;
         }
     }
@@ -34,7 +33,7 @@ public class MyArrayList {
 
             int[] newArray = new int[size-1];
 
-            for(int i=0; i < data.length; i++) {
+            for(int i=0; i < size; i++) {
                 if (i == index) {
 
                 }
@@ -62,7 +61,7 @@ public class MyArrayList {
             }
         }
 
-        returnString += " ]";
+        returnString += "]";
 
         return returnString;
     }
@@ -80,7 +79,7 @@ public class MyArrayList {
 
         for (int i = 0; i < size; i++) {
             if(data[i] == n) {
-                status = true
+                status = true;
             }
         }
 
