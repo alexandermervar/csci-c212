@@ -1,12 +1,8 @@
-package com.alexandermervar;
+package com.alexandermervar.athleteclasses;
 
 import java.util.Scanner;
 
 import javax.sound.sampled.SourceDataLine;
-
-import com.alexandermervar.athleteclasses.SoccerAthlete;
-import com.alexandermervar.athleteclasses.BasketballAthlete;
-import com.alexandermervar.athleteclasses.HockeyAthlete;
 
 public class AthleteMain {
  
@@ -21,23 +17,23 @@ public class AthleteMain {
         String athleteID = "";
         
         System.out.println("Enter the Number of Athletes: ");
-        int numOfAthletes = sc.nextInt();
+        int numOfAthletes = Integer.parseInt(sc.nextLine());
 
         for(int i=0; i<numOfAthletes; i++) {
             System.out.println("Enter the following information for Athlete " + i+1 + ":");
-            System.out.println("Name: ");
+            System.out.print("Name: ");
             athleteName = sc.nextLine();
             System.out.println();
-            System.out.println("Birthdate: ");
+            System.out.print("Birthdate: ");
             athleteBirthdate = sc.nextLine();
             System.out.println();
-            System.out.println("Athlete Type: ");
+            System.out.print("Athlete Type: ");
             athleteType = sc.nextLine();
             System.out.println();
-            System.out.println("Team Played For: ");
+            System.out.print("Team Played For: ");
             athleteTeam = sc.nextLine();
             System.out.println();
-            System.out.println("ID: ");
+            System.out.print("ID: ");
             athleteID = sc.nextLine();
             System.out.println();
 
@@ -75,6 +71,8 @@ public class AthleteMain {
                 System.out.println(userAthlete.toString());
             }
         }
+
+        sc.close();
 
     }
 }
