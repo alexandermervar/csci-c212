@@ -19,9 +19,10 @@ public class StringLinkedList implements StringCollection{
     private StringLinkedList nextElement;
 
     //StringLinkedList Methods
+    //TODO
     public void add(String e, int index) {
         if(getSize()-1 == index){
-            if(isLastElementInList()) {
+            if(getNextElement() == null) {
                 add(value);
                 setValue(e);
             }
