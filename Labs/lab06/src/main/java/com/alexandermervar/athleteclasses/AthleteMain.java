@@ -2,8 +2,6 @@ package com.alexandermervar.athleteclasses;
 
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class AthleteMain {
  
     public static void main(String[] args) {
