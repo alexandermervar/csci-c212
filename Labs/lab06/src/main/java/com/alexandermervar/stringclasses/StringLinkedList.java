@@ -19,20 +19,22 @@ public class StringLinkedList implements StringCollection{
     private StringLinkedList nextElement;
 
     //StringLinkedList Methods
-    //TODO
     public void add(String e, int index) {
-        if(getSize()-1 == index){
+        if(index == 0) {
             if(getNextElement() == null) {
                 add(value);
                 setValue(e);
             }
             else {
-                nextElement.add(value,getSize());
+                nextElement.add(value,0);
                 setValue(e);
             }
         }
+        else if (nextElement == null && index != 0) {
+            nextElement.add(e);
+        }
         else {
-            nextElement.add(e, index);
+            nextElement.add(e, index-1);
         }
     }
 
@@ -122,10 +124,18 @@ public class StringLinkedList implements StringCollection{
 
         //ArrayLists are within the List interface in Java
         ArrayList<String> list = new ArrayList<String>();
-
+       
+        
         list.add(value);
-        list.addAll(nextElement.toList());
-        return list;
+        //list.addAll(nextElement.toList());
+
+        if(nextElement == null) {
+            return list;
+        }
+        else {
+            list.addAll(nextElement.toList());
+            return list;
+        }
     }
     
 }

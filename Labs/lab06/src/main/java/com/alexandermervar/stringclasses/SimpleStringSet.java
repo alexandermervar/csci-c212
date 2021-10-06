@@ -10,10 +10,10 @@ public class SimpleStringSet implements StringCollection{
     }
 
     //SimpleStringSet Field(s)
-    ArrayList<String> stringSet;
+    private ArrayList<String> stringSet;
 
     //SimpleStringSet Methods
-    ArrayList<String> elements() {
+    public ArrayList<String> elements() {
         return stringSet;
     }
     
