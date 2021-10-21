@@ -48,24 +48,18 @@ public class RetailDriver {
             System.out.println("Please select a store to shop at: ");
             String customerStoreToGoTo = user.nextLine();
 
-            //TODO
-            //Go shopping with created customer
             boolean doesStoreExist = false;
             int storeIndex = 0;
 
             for (int i = 0; i < stores.size(); i++) {
-                //TODO
-                /*
-                if (stores.get(i).getStoreName().equals(userSelectedStore)) {
+                if (stores.get(i).getStoreName().equals(customerStoreToGoTo)) {
                     doesStoreExist = true;
                     storeIndex = i;
                 }
-                */
             }
 
             if (doesStoreExist) {
-                //TODO
-                //stores.get(storeIndex).addCustomer(customers.get(customers.size() - 1));
+                stores.get(storeIndex).addStoreCustomers(customers.get(customers.size() - 1));
                 beginShoppingSpree();
             }
             else {
@@ -93,13 +87,10 @@ public class RetailDriver {
             int storeIndex = 0;
 
             for (int i = 0; i < stores.size(); i++) {
-                //TODO
-                /*
                 if (stores.get(i).getStoreName().equals(userSelectedStore)) {
                     doesStoreExist = true;
                     storeIndex = i;
                 }
-                */
             }
 
             if (doesStoreExist) {
@@ -123,27 +114,22 @@ public class RetailDriver {
     }
 
     public static void createStore(String inputStoreName) {
-        //TODO
-        //RetailStore createdStore = new RetailStore(inputStoreName);
-        //stores.add(createdStore);
+        RetailStore createdStore = new RetailStore(inputStoreName);
+        stores.add(createdStore);
         System.out.println("Store added!");
     }
 
-    //TODO
     public static void createCustomer(String inputCustomerName, double inputCustomerBudget, boolean isCustomerWearingMask) {
-        //TODO
-        //Customer createdCustomer = new Customer(inputCustomerName, inputCustomerBudget, isCustomerWearingMask);
-        //customers.add(createdCustomer);
+        Customer createdCustomer = new Customer(inputCustomerName, inputCustomerBudget, isCustomerWearingMask);
+        customers.add(createdCustomer);
         System.out.println("Customer successfully created!");
 
 
     }
 
-    //TODO
     public static void addItemToStore(RetailStore inputStore, String inputItemName, double inputItemPrice, int inputItemQuantity) {
-        //TODO
-        //Item newItem = new Item(inputItemName, inputItemPrice);
-        //inputStore.addItem(newItem, inputItemQuantity);
+        Item newItem = new Item(inputItemName, inputItemPrice);
+        inputStore.addStoreItems(newItem, inputItemQuantity);
         System.out.println("Item successfully added to store!");
     }
 

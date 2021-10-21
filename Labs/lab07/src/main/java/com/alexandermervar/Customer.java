@@ -40,11 +40,11 @@ public class Customer {
         this.isCustomerMask = isCustomerMask;
     }
 
-    //ShoppingCart Getters and Setters
+    //ShoppingCart Getters and Modifier
     public HashMap<Item, Integer> getShoppingCart() {
         return shoppingCart;
     }
-    public void setShoppingCart(HashMap<Item, Integer> shoppingCart) {
-        this.shoppingCart = shoppingCart;
+    public void addToShoppingCart(Item inputItem, int inputQuantity) {
+        shoppingCart.put(inputItem, inputQuantity);
     }
 }
