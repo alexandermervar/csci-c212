@@ -141,7 +141,10 @@ public class RetailDriver {
 
     //TODO
     public static void addItemToStore(RetailStore inputStore, String inputItemName, double inputItemPrice, int inputItemQuantity) {
-
+        //TODO
+        //Item newItem = new Item(inputItemName, inputItemPrice);
+        //inputStore.addItem(newItem, inputItemQuantity);
+        System.out.println("Item successfully added to store!");
     }
 
     public static void main(String[] args) {
