@@ -21,7 +21,7 @@ public class Receipt {
 
         for (Map.Entry<Item, Integer> entry : purchasedItems.entrySet()) {
             itemCount++;
-            outputString += itemCount + ". " + entry.getKey().getItemName() + "-" + entry.getKey().getItemPrice() + " " + entry.getValue() + "\n";
+            outputString += itemCount + ". " + entry.getKey().getItemName() + " - $" + entry.getKey().getItemPrice() + " " + entry.getValue() + "\n";
             outputString += "Item Cost: " + entry.getKey().getItemPrice() * (double) entry.getValue() + "\n";
             runningTotal += entry.getKey().getItemPrice() * (double) entry.getValue();
         }
