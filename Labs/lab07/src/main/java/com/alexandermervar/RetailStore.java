@@ -67,38 +67,45 @@ public class RetailStore {
     //CustomerMenu
     public void runCustomerMenu(Customer inputCustomer) {
         System.out.println("Please select the task you would like to complete in the store: ");
-        System.out.print("1. Add an Item to Cart\n2. Display Current Shopping Cart\n3. Checkout of the Store\n4. Exit the Menu");
+        System.out.print("1. Add an Item to Cart\n2. Display Current Shopping Cart\n3. Checkout of the Store\n4. Exit the Menu\n");
 
-        Scanner user = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int menuSelection = Integer.parseInt(user.nextLine());
+        int menuSelection = Integer.parseInt(sc.nextLine());
 
         if (menuSelection == 1) {
             System.out.println("Your current balance: $" + inputCustomer.getCustomerBudget());
             System.out.println("");
             System.out.println("Please select the item you would like to add to your cart: ");
 
-            int itemLineNum = 0;
             for (Map.Entry<Item, Integer> entry : storeItems.entrySet()) {
                 System.out.println(entry.getKey().getItemName() + " - $" + entry.getKey().getItemPrice() + "     In Stock: " + entry.getValue() + "\n");
             }
 
-            String userSelection = user.nextLine();
+            String userSelection = sc.nextLine();
+            boolean entryExists = false;
+            for (Map.Entry<Item, Integer> entry : storeItems.entrySet()) {
+                if(entry.getKey().getItemName().equals(userSelection)) {
+                    entryExists = true;
+                }
+            }
 
-            if (storeItems.containsKey(userSelection)) {
+            if (entryExists) {
                 System.out.println("Input Quantity: ");
-                int userQuantity = Integer.parseInt(user.nextLine());
+                int userQuantity = Integer.parseInt(sc.nextLine());
 
                 for (Map.Entry<Item, Integer> entry : storeItems.entrySet()) {
                     if(entry.getKey().getItemName().equals(userSelection)) {
 
-                        if (entry.getKey().getItemPrice() * userQuantity > inputCustomer.getCustomerBudget()) {
+                        if (entry.getKey().getItemPrice() * (double) userQuantity > inputCustomer.getCustomerBudget()) {
                             System.out.println("That quantity would put you over budget!");
+                            runCustomerMenu(inputCustomer);
                         }
                         else {
-                            inputCustomer.setCustomerBudget(inputCustomer.getCustomerBudget() - (entry.getKey().getItemPrice() * userQuantity));
+                            inputCustomer.setCustomerBudget(inputCustomer.getCustomerBudget() - (entry.getKey().getItemPrice() * (double) userQuantity));
                             inputCustomer.addToShoppingCart(entry.getKey(), userQuantity);
                             storeItems.put(entry.getKey(), entry.getValue()-userQuantity);
+                            runCustomerMenu(inputCustomer);
                         }
 
                         break;
@@ -111,7 +118,11 @@ public class RetailStore {
             }
         }
         else if (menuSelection == 2) {
-            System.out.println(inputCustomer.getShoppingCart());
+            System.out.println("Your Shopping Cart: ");
+            for (Map.Entry<Item, Integer> entry : storeItems.entrySet()) {
+                System.out.println(entry.getKey().getItemName() + " - " + entry.getValue());
+            }
+            runCustomerMenu(inputCustomer);
         }
         else if (menuSelection == 3) {
             storeCustomers.remove(inputCustomer);
@@ -121,8 +132,6 @@ public class RetailStore {
         else {
             System.out.println("Exiting Menu...");
         }
-
-        user.close();
     }
     
 }

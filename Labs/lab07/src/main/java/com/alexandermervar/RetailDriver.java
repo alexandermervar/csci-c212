@@ -35,7 +35,7 @@ public class RetailDriver {
             System.out.println("Please input the name of the customer you would like to create: ");
             String userCustomerName = user.nextLine();
             System.out.println("Please input the respective customer's budget: ");
-            int userCustomerBudget = Integer.parseInt(user.nextLine());
+            double userCustomerBudget = Double.parseDouble(user.nextLine());
             System.out.print("Please input if the customer is wearing a mask:\n1. Wearing a Mask\n2. Not Wearing a Mask\n");
             int userWearingAMask = Integer.parseInt(user.nextLine());
             boolean userWearingAMaskBoolean = true;
@@ -60,14 +60,12 @@ public class RetailDriver {
 
             if (doesStoreExist) {
                 stores.get(storeIndex).addStoreCustomers(customers.get(customers.size() - 1));
-                beginShoppingSpree();
             }
             else {
                 System.out.println("That store does not exist try again!");
                 System.out.println("");
                 System.out.println("");
                 System.out.println("");
-                beginShoppingSpree();
             }
 
             beginShoppingSpree();
@@ -109,8 +107,6 @@ public class RetailDriver {
             System.out.println("Thank you for shopping with us!");
         }
 
-        //Close Scanner Object
-        user.close();
     }
 
     public static void createStore(String inputStoreName) {
