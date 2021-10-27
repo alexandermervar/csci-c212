@@ -4,6 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+
+/**
+ * BlackjackPlayer implements the JFrame and JPanels in order to complete section #3 of Lab8 as specified in the 'Lab8.pdf'
+ * This class also includes the necassary static variables
+ */
 public class BlackjackPlayer {
     
     public static int[] handTotals = new int[2];
@@ -74,6 +79,7 @@ public class BlackjackPlayer {
         frame.setVisible(true);
     }
 
+    // Returns the proper string for the label that displays your hand in the panel
     private static String displayHand(int[] hand) {
         if (hand[0] != hand[1]) {
             return Integer.toString(hand[0]) + ", " + hand[1];
