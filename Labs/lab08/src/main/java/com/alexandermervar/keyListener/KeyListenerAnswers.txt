@@ -1,0 +1,3 @@
+1. Pressing a key is when the key is all the way down on the keyboard and actuates the letter. Clicking is when a key has been pressed and released in succession.
+2. You could pass the KeyEvents only when a certain key is pressed otherwise, you could store the KeyEvents in an ArrayList. This would make it possible to store n number of KeyEvents
+before being processed.

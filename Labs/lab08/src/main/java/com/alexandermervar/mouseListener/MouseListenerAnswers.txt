@@ -1,0 +1,3 @@
+1.) A mouse is pressed when you press down on the mouse and a mouse is clicked when the mouse is pressed down followed by the release of the mouse.
+2.) If we wanted to have a different implementation of MouseListner, the use of interfaces would allow us to create a different implementation without any
+destructive action to the old implementation. Then, when we would like to use that new implementation, we would change the MouseListener for the panel and proceed.
