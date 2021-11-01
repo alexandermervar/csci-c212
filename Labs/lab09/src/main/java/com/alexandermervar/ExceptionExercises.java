@@ -3,6 +3,8 @@ package com.alexandermervar;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// https://iu.instructure.com/courses/1996261/discussion_topics/11183961
+
 public class ExceptionExercises {
     public static void main(String[] args) {
 
