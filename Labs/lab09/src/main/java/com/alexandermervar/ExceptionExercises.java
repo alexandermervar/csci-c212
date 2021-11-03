@@ -21,8 +21,17 @@ public class ExceptionExercises {
 
     static int[] problem1(){
         int[] intArray = {1,2,3,4,5};
-        for(int i=0;i <= intArray.length;i++){          //looping through elements in i
-            intArray[i] = intArray[i - 1] + intArray[i];    //intArray[i] becomes the sum of itself and the element before it
+        for(int i=0;i <= intArray.length;i++){    //looping through elements in i
+            try {
+                intArray[i] = intArray[i - 1] + intArray[i];    //intArray[i] becomes the sum of itself and the element before it
+            }
+            catch (Exception exception) {
+                System.out.println("Exception encountered: " + exception.getMessage());
+                if (i < intArray.length) {
+                    intArray[i] = 100;
+                }
+            }
+
         }
         return intArray;
     }
@@ -32,10 +41,19 @@ public class ExceptionExercises {
         ArrayList<Integer> myArrayList = null;
 
         for(int i=0; i < 10; i++){
+            try {
             myArrayList.add(i);
             myArrayList.set(i,i/myArrayList.get(i-1));
+            }
+            catch (NullPointerException exception) {
+                System.out.println("Exception encountered: " + exception.getMessage());
+                myArrayList = new ArrayList<>();
+                myArrayList.add(i);
+            }
+            catch (ArithmeticException exception) {
+                System.out.println("Exception encountered: " + exception.getMessage() + " at index " + i);
+            }
         }
-
         return myArrayList;
     }
 }
