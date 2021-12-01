@@ -1,6 +1,7 @@
 package com.alexandermervar;
 
 import com.alexandermervar.Stacks.Stacks;
+import com.alexandermervar.LinkedList.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,5 +24,27 @@ public class Main {
         System.out.println("Should be \"false\": " + Stacks.isStringPalindrome("abcd"));
         System.out.println("Should be \"false\": " + Stacks.isStringPalindrome("abtcba"));
 
+        System.out.println("");
+
+        System.out.println("reverseListNode(ListNode head)");
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        ListNode.printListNode(head);
+        System.out.println("");
+        ListNode.printListNode(LinkedList.reverseListNode(head));
+        System.out.println("");
+        
+        System.out.println("");
+
+        System.out.println("isCycleInNode(ListNode node)");
+        ListNode head2 = new ListNode(1);
+        head2.next = new ListNode(2);
+        head2.next.next = new ListNode(3);
+        head2.next.next.next = new ListNode(4);
+        System.out.println("Should be \"false\": " + LinkedList.isCycleInNode(head2));
+        head2.next.next.next.next = head2.next.next;
+        System.out.println("Should be \"true\": " + LinkedList.isCycleInNode(head2));
     }
 }
