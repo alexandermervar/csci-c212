@@ -1,5 +1,5 @@
 package com.alexandermervar.Sets;
 
-public class Sets {
+public class MathSet {
     
 }
