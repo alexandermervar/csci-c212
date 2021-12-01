@@ -59,7 +59,7 @@ public class LinkedList {
 
             reverseEnd.next = null;
 
-            reverseEnd = reverseListNode(reverse)
+            reverseEnd = reverseListNode(reverse);
 
             if (reversePrevious == null) {
                 head = reverseEnd;
