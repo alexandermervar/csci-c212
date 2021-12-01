@@ -1,13 +1,13 @@
 package com.alexandermervar.QueuesandPriorityQueues;
 
-import java.util.AbstractQueue;
+import java.util.Queue;
 
 public class Ride {
     
     // A ride class with instance variables for name, capacity, and a Queue of customers/passengers
     private String name;
     private int capacity;
-    private AbstractQueue<Customer> passengers;
+    private Queue<Customer> passengers;
 
     // Setters and getters
     public String getName() {
@@ -22,18 +22,19 @@ public class Ride {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-    public AbstractQueue<Customer> getPassengers() {
+    public Queue<Customer> getPassengers() {
         return passengers;
     }
-    public void setPassengers(AbstractQueue<Customer> passengers) {
+    public void setPassengers(Queue<Customer> passengers) {
         this.passengers = passengers;
     }
 
     // Constructor for the Ride class
-    public Ride(String name, int capacity, AbstractQueue<Customer> passengers) {
+    public Ride(String name, int capacity, Queue<Customer> passengers) {
         this.name = name;
         this.capacity = capacity;
         this.passengers = passengers;
+
     }
 
     // A run() function that removes people from the queue, up until the ride capacity is reached
@@ -42,18 +43,19 @@ public class Ride {
     public void run() {
         int count = 0;
         while (count < capacity && passengers.size() > 0) {
-            Customer customer = passengers.poll();
+            Customer customer = passengers.peek();
             if (customer.isFastPass()) {
                 System.out.println("Fastpass: " + customer.getName());
             } else {
                 System.out.println("Regular: " + customer.getName());
             }
+            passengers.remove();
             count++;
         }
     }
 
     // An addToQueue() function that can add a ArrayList of customers to the ride's queue
-    public void addToQueue(AbstractQueue<Customer> customers) {
+    public void addToQueue(Queue<Customer> customers) {
         for (Customer customer : customers) {
             passengers.add(customer);
         }
