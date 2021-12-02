@@ -3,6 +3,7 @@ package com.alexandermervar;
 import java.util.*;
 import com.alexandermervar.Sets.MathSet;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MathSetTest {
     
@@ -29,7 +30,13 @@ public class MathSetTest {
         set4.add(10);
         set4.add(5);
 
-        assertEquals(MathSet.union(set1, set2), "[1, 2, 3, 5]");
+        assertEquals(MathSet.union(set1, set2).toString(), "[1, 2, 3, 5]");
+        assertEquals(MathSet.intersection(set1, set2).toString(), "[1, 3]");
+        assertEquals(MathSet.complement(set1, set2).toString(), "[2, 5]");
+        assertEquals(MathSet.complement(set1, set3).toString(), "[1, 3, 4, 6]");
+        assertEquals(MathSet.complement(set1, set4).toString(), "[1, 2, 3, 5, 10, 15]");
+        assertEquals(MathSet.union(set1, set3).toString(), "[1, 2, 3, 4, 6]");
+        assertEquals(MathSet.intersection(set1, set3).toString(), "[2]");
     }
     
 }

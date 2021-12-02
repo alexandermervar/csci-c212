@@ -28,6 +28,11 @@ public class MathSet {
                 result.add(i);
             }
         }
+        for (Integer i : set2) {
+            if (!set1.contains(i)) {
+                result.add(i);
+            }
+        }
         return result;
     }
     
