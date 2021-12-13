@@ -1,0 +1,187 @@
+C212 Final Exam
+
+Question 1: Write a program in Java to sort a HashMap by keys using the Collections framework.
+
+class sort_key implements Comparator<Integer>{
+   
+
+
+   @Override
+   public int compare(int integer1, int integer2) {
+       return integer1.compareTo(integer2);
+   }
+}
+
+Question 2: Write a program in Java with a GUI that looks like the one shown below. Once initialized with the white color, the background should alternate between cyan and yellow as the button is pushed.
+
+
+
+public class RandomBGColors {
+
+	public RandomBGColors() {
+		private int mode = 0;
+	
+		JPanel primary = new JPanel();
+		primary.setBackground(Color.white);
+		primary.setPreferredSize(new Dimension(250, 75));
+		push = new JButton("Change Color");
+		push.addActionListener(new ButtonListener());
+		primary.add(push);
+	}
+
+	private class ButtonListener implements ActionListener {
+		public void actionPerformed(actionEvent event) {
+			mode++;
+			if (mode % 2 == 0) {
+				primary.setBackground(Color.cyan);
+
+			}
+			else {
+				primary.setBackground(Color.yellow);
+			}
+
+		}
+	}
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Random BG Colors");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		frame.getContantPane().add(new RandomBGColors());
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+
+}
+
+Question 3: Write a method int findMin(int[] arr) to return the minimum value in an array arr. Throw a RuntimeException with the message “Empty array provided” if arr is empty. Put the method body in the try block. Let the catch clause catch an ArrayIndexOutOfBoundsException. In the catch block, throw the required exception. Use the following skeleton code:
+
+public int findMin(int[] arr) {
+    try {
+	int[] minArray = Arrays.sort(arr);
+	return minArray[0];
+    } catch (ArrayIndexOutOfBoundsException e) {
+	throw new RuntimeException("Empty array provided");
+    }
+}
+
+
+Question 4: Write a method public int[] reverseInsertionSort(int[] arr) that sorts a given array in descending order using insertion sort. The method should return the sorted array.
+
+public int[] reverseInsertionSort(int[] arr) {
+	int n = arr.length;
+        for (int i=1; i<n; ++i)
+        {
+            int key = arr[i];
+            int j = i-1;
+  
+            while (j>=0 && arr[j] < key)
+            {
+                arr[j-1] = arr[j];
+                j = j+1;
+            }
+            arr[j-1] = key;
+        }
+}
+
+Question 5: Write a generic method in Java to swap two different elements in an array 
+
+public int[] swapElementsInArray(int[] arr, int swapIndexOne, int swapIndexTwo) {
+
+	int[] swappedArray = new int[arr.length];
+	int indexOneValue = 0;
+	int indexTwoValue = 0;
+
+	for(int i=0; i < arr.length; i++) {
+		if(i == swapIndexOne) {
+			indexOneValue = arr[i];
+		}
+		else if(i == swapIndexTwo) {
+			indexTwoValue = arr[i];
+		}
+		else {
+			swappedArray[i] = arr[i]
+		}
+	}
+	swappedArray[swapIndexOne] = indexTwoValue;
+	swappedArray[swapIndexTwo] = indexTwoValue;
+	return swappedArray;
+}
+
+Question 6: Let Q be a queue and S be a stack storing Integers. Assume that Q and S are initially empty. What would be printed by the following code fragment, and what would be the final contents of the queue and the stack after execution of the code fragment
+
+S.push(50);
+Q.add(30);
+Q.add(S.peek());
+S.push(20);
+S.push(Q.peek());
+S.push(Q.remove());
+Q.add(30);
+
+
+for(int i = 0; i < 4; i++){
+    System.out.print(S.pop() + " ");
+    System.out.print(Q.remove() + " ");
+    S.push(Q.peek()+i);
+    Q.add(S.peek()+ 10);
+}
+
+4
+
+// Notes: 
+// Stacks have the top at the end
+// Queues have the top at the beginning
+// Queues add to the back and remove from the front
+// Stacks add to the front and remove from the back
+
+
+S = 63 62 31 30
+Q = 60 40
+
+Printed Value: 50 30 20 30 50 30 50 60
+
+
+Question 7: Write a recursive method int CountOddLeaves(BSTnode root) that counts number of odd leaves present in a binary search tree.
+
+- For example, if we have above BST, the method should return 3 to the calling method because in this BST, we have three leaves i.e., 9, 15 and 17 that have odd values.
+- Note: Assume that no other method for BST is available. If you need any other method, you should write its code yourself.
+
+public int countOddLeaves(BSTnode root) {
+
+	if (root == null) {
+		return 0;
+	}
+	else {
+		if(root.data % 2 != 0) {
+			return 1 + countOddLeaves(root.left) + countOddLeaves(root.right);
+		}
+		else {
+			return countOddLeaves(root.left) + countOddLeaves(root.right);
+		}
+	}
+
+}
+
+
+Question 8: Determine the Big-O running time of the following code fragment, in terms of the variable n.  You must explain your answer.  An answer without explanation gets only 1 point.
+
+public static void findBigO(int n) {
+    int sum = 0; int i = 0; int j;
+    while (i<n) {
+        j = 0;
+        while(j<n) {
+            if (j==5)
+                break;
+            sum += j;
+            j++;
+        }
+        i++;
+    }
+}
+
+The Big-O Runtime is O(n2). This is due to the fact that when inputting the test values of n = 1 and n= 3, we can see that the values are visited once and 9 times, respectively. We can see that the values are visited n^2 times depending on what the value of n is when computing the desired integer.
+
+
+
+
+
